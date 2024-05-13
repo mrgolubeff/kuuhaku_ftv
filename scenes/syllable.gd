@@ -2,6 +2,8 @@ extends Node
 
 
 var syllable: String
+var en_syllable: String
+var grabable: bool
 
 
 # Called when the node enters the scene tree for the first time.
