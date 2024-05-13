@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://sswyxvsdx85k"]
+[gd_scene load_steps=2 format=3 uid="uid://sswyxvsdx85k"]
+
+[ext_resource type="Texture2D" uid="uid://dntcsuw00uk10" path="res://assets/Gray.png" id="1_vuiwu"]
 
 [node name="Main" type="Node"]
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vuiwu")
+stretch_mode = 1
