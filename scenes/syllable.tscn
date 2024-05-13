@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://b1173boa5ni2v"]
+[gd_scene load_steps=2 format=3 uid="uid://b1173boa5ni2v"]
+
+[ext_resource type="Script" path="res://scenes/syllable.gd" id="1_f6bjo"]
 
 [node name="Syllable" type="Node"]
+script = ExtResource("1_f6bjo")
