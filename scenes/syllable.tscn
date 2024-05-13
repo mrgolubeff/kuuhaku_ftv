@@ -3,7 +3,9 @@
 [ext_resource type="Script" path="res://scenes/syllable.gd" id="1_f6bjo"]
 [ext_resource type="Texture2D" uid="uid://c4jjluxc0yl7t" path="res://assets/g4695.png" id="2_7h3jk"]
 
-[node name="Syllable" type="Node2D"]
+[node name="Syllable" type="Button"]
+offset_right = 94.0
+offset_bottom = 94.0
 script = ExtResource("1_f6bjo")
 
 [node name="Frame" type="TextureRect" parent="."]

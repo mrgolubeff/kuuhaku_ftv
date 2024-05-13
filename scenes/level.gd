@@ -23,5 +23,10 @@ func create_syllable():
 	var syllable = syllable_scene.instantiate()
 	syllable.position.x = -100
 	syllable.position.y = 50
+	syllable.pressed.connect(_on_syllable_pressed)
 	add_child(syllable)
 	upper_syllables.append(syllable)
+
+
+func _on_syllable_pressed():
+	print("Syllable pressed.")
