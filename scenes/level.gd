@@ -21,7 +21,7 @@ func _on_timer_timeout():
 
 func create_syllable():
 	var syllable = syllable_scene.instantiate()
-	syllable.position.x = 0
+	syllable.position.x = -100
 	syllable.position.y = 50
 	add_child(syllable)
 	upper_syllables.append(syllable)
