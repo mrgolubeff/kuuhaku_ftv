@@ -23,10 +23,13 @@ func create_syllable():
 	var syllable = syllable_scene.instantiate()
 	syllable.position.x = -100
 	syllable.position.y = 50
-	syllable.pressed.connect(_on_syllable_pressed)
+	syllable.pressed.connect(_on_syllable_pressed.bind(syllable))
 	add_child(syllable)
 	upper_syllables.append(syllable)
 
 
-func _on_syllable_pressed():
+func _on_syllable_pressed(button: Button):
 	print("Syllable pressed.")
+	print(button.position.x)
+	button.position.y += 300
+	button.disabled = true
