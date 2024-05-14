@@ -9,6 +9,7 @@ offset_bottom = 94.0
 script = ExtResource("1_f6bjo")
 
 [node name="Frame" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 94.0
 offset_bottom = 94.0
 texture = ExtResource("2_7h3jk")
