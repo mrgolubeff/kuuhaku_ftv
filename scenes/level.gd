@@ -33,3 +33,8 @@ func _on_syllable_pressed(button: Button):
 	print(button.position.x)
 	button.position.y += 300
 	button.disabled = true
+	var button_index = upper_syllables.find(button)
+	var roll = randf()
+	if roll >= 0.6:
+		upper_syllables.remove_at(button_index)
+		button.delete()
