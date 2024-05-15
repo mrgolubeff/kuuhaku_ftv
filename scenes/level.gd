@@ -65,6 +65,8 @@ func _ready():
 func _process(delta):
 	for syllable in upper_syllables:
 		syllable.position.x += UPPER_SPEED * delta
+	for syllable in lower_syllables:
+		syllable.position.x += LOWER_SPEED * delta
 
 
 func _on_timer_timeout():
@@ -88,8 +90,6 @@ func _on_syllable_pressed(syllable: Area2D):
 	print(syllable.position.x)
 	syllable.position.y += 300
 	syllable.get_node("Button").disabled = true
-	#var syllable_index = upper_syllables.find(syllable)
-	#var roll = randf()
-	#if roll >= 0.6:
-		#upper_syllables.remove_at(syllable_index)
-		#syllable.delete()
+	var syllable_index = upper_syllables.find(syllable)
+	upper_syllables.remove_at(syllable_index)
+	lower_syllables.append(syllable)
