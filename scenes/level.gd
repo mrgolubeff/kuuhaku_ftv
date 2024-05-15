@@ -3,6 +3,9 @@ extends Node
 
 @export var syllable_scene: PackedScene
 var upper_syllables: Array = []
+var lower_syllables: Array = []
+const UPPER_SPEED: int = 25
+const LOWER_SPEED: int = 75
 
 var katakana = [
 	["ア", "a"], # 0
@@ -61,7 +64,7 @@ func _ready():
 
 func _process(delta):
 	for syllable in upper_syllables:
-		syllable.position.x += 25 * delta
+		syllable.position.x += UPPER_SPEED * delta
 
 
 func _on_timer_timeout():
