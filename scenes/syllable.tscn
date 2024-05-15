@@ -16,5 +16,4 @@ expand_mode = 1
 offset_right = 94.0
 offset_bottom = 94.0
 theme_override_font_sizes/font_size = 50
-text = "ア"
 flat = true

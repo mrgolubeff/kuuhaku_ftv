@@ -6,9 +6,14 @@ var en_syllable: String
 var grabable: bool
 
 
+func _init(symbol: String = "ア", en_symbol: String = ""):
+	syllable = symbol
+	en_syllable = en_symbol
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Button.text = syllable
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
