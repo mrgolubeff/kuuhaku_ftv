@@ -70,6 +70,9 @@ func _on_timer_timeout():
 
 func create_syllable():
 	var syllable = syllable_scene.instantiate()
+	var rand_index = randi_range(0, katakana.size() - 1)
+	syllable.syllable = katakana[rand_index][0]
+	syllable.en_syllable = katakana[rand_index][1]
 	syllable.position.x = -100
 	syllable.position.y = 50
 	syllable.get_node("Button").pressed.connect(_on_syllable_pressed.bind(syllable))
@@ -77,13 +80,13 @@ func create_syllable():
 	upper_syllables.append(syllable)
 
 
-func _on_syllable_pressed(button: Area2D):
+func _on_syllable_pressed(syllable: Area2D):
 	print("Syllable pressed.")
-	print(button.position.x)
-	button.position.y += 300
-	button.get_node("Button").disabled = true
-	var button_index = upper_syllables.find(button)
-	var roll = randf()
-	if roll >= 0.6:
-		upper_syllables.remove_at(button_index)
-		button.delete()
+	print(syllable.position.x)
+	syllable.position.y += 300
+	syllable.get_node("Button").disabled = true
+	#var syllable_index = upper_syllables.find(syllable)
+	#var roll = randf()
+	#if roll >= 0.6:
+		#upper_syllables.remove_at(syllable_index)
+		#syllable.delete()
