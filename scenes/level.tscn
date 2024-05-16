@@ -36,7 +36,7 @@ shape = SubResource("RectangleShape2D_rbci6")
 [node name="LowerEnd" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LowerEnd"]
-position = Vector2(1298, 466.875)
+position = Vector2(-144, 466)
 shape = SubResource("RectangleShape2D_7m5x8")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
