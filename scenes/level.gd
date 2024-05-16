@@ -6,7 +6,9 @@ var upper_syllables: Array = []
 var lower_syllables: Array = []
 const UPPER_SPEED: int = 25
 const LOWER_SPEED: int = -75
+const FRAME_SIZE: int = 94
 var score: int = 0
+var game_running = false
 
 var katakana = [
 	["ア", "a"], # 0
@@ -62,15 +64,17 @@ var scoring = [
 
 
 func _ready():
+	game_running = true
 	create_syllable()
 	$Timer.start()
 
 
 func _process(delta):
-	for syllable in upper_syllables:
-		syllable.position.x += UPPER_SPEED * delta
-	for syllable in lower_syllables:
-		syllable.position.x += LOWER_SPEED * delta
+	if game_running:
+		for syllable in upper_syllables:
+			syllable.position.x += UPPER_SPEED * delta
+		for syllable in lower_syllables:
+			syllable.position.x += LOWER_SPEED * delta
 
 
 func _on_timer_timeout():
