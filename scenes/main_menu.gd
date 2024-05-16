@@ -54,3 +54,51 @@ func _on_ka_button_pressed():
 	Utils1.start_index = 5
 	Utils1.end_index = 9
 	get_tree().change_scene_to_file("res://scenes/level.tscn")
+
+
+func _on_sa_button_pressed():
+	Utils1.start_index = 10
+	Utils1.end_index = 14
+	get_tree().change_scene_to_file("res://scenes/level.tscn")
+
+
+func _on_ta_button_pressed():
+	Utils1.start_index = 15
+	Utils1.end_index = 19
+	get_tree().change_scene_to_file("res://scenes/level.tscn")
+
+
+func _on_na_button_pressed():
+	Utils1.start_index = 20
+	Utils1.end_index = 24
+	get_tree().change_scene_to_file("res://scenes/level.tscn")
+
+
+func _on_ha_button_pressed():
+	Utils1.start_index = 25
+	Utils1.end_index = 29
+	get_tree().change_scene_to_file("res://scenes/level.tscn")
+
+
+func _on_ma_button_pressed():
+	Utils1.start_index = 30
+	Utils1.end_index = 34
+	get_tree().change_scene_to_file("res://scenes/level.tscn")
+
+
+func _on_ya_button_pressed():
+	Utils1.start_index = 35
+	Utils1.end_index = 37
+	get_tree().change_scene_to_file("res://scenes/level.tscn")
+
+
+func _on_ra_button_pressed():
+	Utils1.start_index = 38
+	Utils1.end_index = 42
+	get_tree().change_scene_to_file("res://scenes/level.tscn")
+
+
+func _on_wa_button_pressed():
+	Utils1.start_index = 43
+	Utils1.end_index = 45
+	get_tree().change_scene_to_file("res://scenes/level.tscn")

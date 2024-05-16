@@ -131,3 +131,11 @@ expand_icon = true
 
 [connection signal="pressed" from="AButton" to="." method="_on_a_button_pressed"]
 [connection signal="pressed" from="KaButton" to="." method="_on_ka_button_pressed"]
+[connection signal="pressed" from="SaButton" to="." method="_on_sa_button_pressed"]
+[connection signal="pressed" from="TaButton" to="." method="_on_ta_button_pressed"]
+[connection signal="pressed" from="NaButton" to="." method="_on_na_button_pressed"]
+[connection signal="pressed" from="HaButton" to="." method="_on_ha_button_pressed"]
+[connection signal="pressed" from="MaButton" to="." method="_on_ma_button_pressed"]
+[connection signal="pressed" from="YaButton" to="." method="_on_ya_button_pressed"]
+[connection signal="pressed" from="RaButton" to="." method="_on_ra_button_pressed"]
+[connection signal="pressed" from="WaButton" to="." method="_on_wa_button_pressed"]
