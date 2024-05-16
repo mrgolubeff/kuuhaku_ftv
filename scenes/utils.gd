@@ -1,11 +1,52 @@
 extends Node
+class_name Utils
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+var katakana = [
+	["ア", "a"], # 0
+	["イ", "i"],
+	["ウ", "u"],
+	["エ", "e"],
+	["オ", "o"],
+	["カ", "ka"], # 5
+	["キ", "ki"],
+	["ク", "ku"],
+	["ケ", "ke"],
+	["コ", "ko"],
+	["サ", "sa"], # 10
+	["シ", "shi"],
+	["ス", "su"],
+	["セ", "se"],
+	["ソ", "so"],
+	["タ", "ta"], # 15
+	["チ", "chi"],
+	["ツ", "tsu"],
+	["テ", "te"],
+	["ト", "to"],
+	["ナ", "na"], # 20
+	["ニ", "ni"],
+	["ヌ", "nu"],
+	["ネ", "ne"],
+	["ノ", "no"],
+	["ハ", "ha"], # 25
+	["ヒ", "hi"],
+	["フ", "fu"],
+	["ヘ", "he"],
+	["ホ", "ho"],
+	["マ", "ma"], # 30
+	["ミ", "mi"],
+	["ム", "mu"],
+	["メ", "me"],
+	["モ", "mo"],
+	["ヤ", "ya"], # 35
+	["ユ", "yu"],
+	["ヨ", "yo"],
+	["ラ", "ra"], # 38
+	["リ", "ri"],
+	["ル", "ru"],
+	["レ", "re"],
+	["ロ", "ro"],
+	["ワ", "wa"], # 43
+	["ヲ", "wo"], # 44
+	["ン", "n"] # 45
+]
