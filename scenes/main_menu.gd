@@ -27,6 +27,7 @@ func create_table():
 		syllable.syllable = syllable_pair[0]
 		syllable.en_syllable = syllable_pair[1]
 		syllable.get_node("Button").disabled = true
+		syllable.get_node("En").visible = true
 		syllable.position.x = HOR_OFFSET + (y * (FRAME_SIZE + DISTANCE))
 		syllable.position.y = VER_OFFSET + (i * (FRAME_SIZE + DISTANCE))
 		add_child(syllable)

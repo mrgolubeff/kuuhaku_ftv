@@ -14,6 +14,7 @@ func _init(symbol: String = "ア", en_symbol: String = ""):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Button.text = syllable
+	$En.text = en_syllable
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

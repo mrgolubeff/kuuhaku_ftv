@@ -24,3 +24,11 @@ offset_right = 94.0
 offset_bottom = 94.0
 theme_override_font_sizes/font_size = 50
 flat = true
+
+[node name="En" type="Label" parent="."]
+visible = false
+offset_left = 7.0
+offset_top = 67.0
+offset_right = 35.0
+offset_bottom = 90.0
+text = "ka"
