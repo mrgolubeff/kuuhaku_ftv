@@ -4,7 +4,7 @@ extends Node
 @export var syllable_scene: PackedScene
 var upper_syllables: Array = []
 var lower_syllables: Array = []
-const UPPER_SPEED: int = 25
+const UPPER_SPEED: int = 50
 const LOWER_SPEED: int = -125
 const OFFSET: int = 430
 const FRAME_SIZE: int = 94
