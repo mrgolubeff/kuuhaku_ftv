@@ -92,7 +92,7 @@ func create_syllable():
 	syllable.position.x = -(FRAME_SIZE + DISTANCE)
 	syllable.position.y = 50
 	syllable.get_node("Button").pressed.connect(_on_syllable_pressed.bind(syllable))
-	add_child(syllable)
+	call_deferred("add_child", syllable)
 	upper_syllables.append(syllable)
 
 
@@ -124,5 +124,5 @@ func _on_lower_end_area_entered(area):
 	area.delete()
 
 
-func _on_spawning_area_area_exited(area):
+func _on_spawning_area_area_exited(_area):
 	create_syllable()
