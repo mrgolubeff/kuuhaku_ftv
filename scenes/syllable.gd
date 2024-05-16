@@ -6,7 +6,7 @@ var en_syllable: String
 var grabable: bool
 
 
-func _init(symbol: String = "ア", en_symbol: String = ""):
+func _init(symbol: String = "ア", en_symbol: String = "a"):
 	syllable = symbol
 	en_syllable = en_symbol
 
