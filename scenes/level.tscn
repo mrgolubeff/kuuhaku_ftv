@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://sswyxvsdx85k"]
+[gd_scene load_steps=9 format=3 uid="uid://sswyxvsdx85k"]
 
 [ext_resource type="Texture2D" uid="uid://dntcsuw00uk10" path="res://assets/Gray.png" id="1_tir71"]
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_u80dg"]
 [ext_resource type="PackedScene" uid="uid://b1173boa5ni2v" path="res://scenes/syllable.tscn" id="2_l8dc3"]
 [ext_resource type="FontFile" uid="uid://dl88tmnl3kgqd" path="res://assets/nasalization-rg.ttf" id="4_c80r3"]
+[ext_resource type="Texture2D" uid="uid://ikqx32tb0f5i" path="res://icon.svg" id="5_bdc4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbci6"]
 size = Vector2(24, 278.5)
@@ -27,9 +28,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_tir71")
 stretch_mode = 1
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
 
 [node name="UpperEnd" type="Area2D" parent="."]
 
@@ -69,7 +67,16 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 1034.0
+offset_top = 291.0
+offset_right = 1094.0
+offset_bottom = 351.0
+icon = ExtResource("5_bdc4f")
+flat = true
+expand_icon = true
+
 [connection signal="area_entered" from="UpperEnd" to="." method="_on_upper_end_area_entered"]
 [connection signal="area_entered" from="LowerEnd" to="." method="_on_lower_end_area_entered"]
 [connection signal="area_exited" from="SpawningArea" to="." method="_on_spawning_area_area_exited"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

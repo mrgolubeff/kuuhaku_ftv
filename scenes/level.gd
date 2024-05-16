@@ -35,10 +35,6 @@ func _process(delta):
 			syllable.position.x += LOWER_SPEED * delta
 
 
-func _on_timer_timeout():
-	create_syllable()
-
-
 func create_syllable():
 	var syllable = syllable_scene.instantiate()
 	var rand_index: int
@@ -85,3 +81,7 @@ func _on_lower_end_area_entered(area):
 
 func _on_spawning_area_area_exited(_area):
 	create_syllable()
+
+
+func _on_exit_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
