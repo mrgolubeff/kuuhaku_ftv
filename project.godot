@@ -15,6 +15,10 @@ run/main_scene="res://scenes/level.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Utils1="*res://scenes/utils.gd"
+
 [rendering]
 
 renderer/rendering_method="mobile"

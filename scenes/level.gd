@@ -4,21 +4,24 @@ extends Node
 @export var syllable_scene: PackedScene
 var upper_syllables: Array = []
 var lower_syllables: Array = []
-const UPPER_SPEED: int = 50
-const LOWER_SPEED: int = -125
+const UPPER_SPEED: int = 75
+const LOWER_SPEED: int = -300
 const OFFSET: int = 430
 const FRAME_SIZE: int = 94
 const DISTANCE: int = 5
 var score: int = 0
 var game_running: bool = false
 
-var katakana = Utils.new().katakana
-var scoring = [
-	"a", "i", "u", "e", "o",
-]
+var katakana: Array = Utils1.katakana
+var scoring: Array = []
 
 
 func _ready():
+	scoring = []
+	for syllable_pair in katakana.slice(Utils1.start_index, Utils1.end_index+1):
+		scoring.append(syllable_pair[1])
+	print(scoring)
+	
 	game_running = true
 	create_syllable()
 	#$Timer.start()
@@ -38,8 +41,11 @@ func _on_timer_timeout():
 
 func create_syllable():
 	var syllable = syllable_scene.instantiate()
-	#var rand_index = randi_range(0, katakana.size() - 1)
-	var rand_index = randi_range(0, 4)
+	var rand_index: int
+	if randf() > 0.5:
+		rand_index = randi_range(Utils1.start_index, Utils1.end_index)
+	else:
+		rand_index = randi_range(0, katakana.size()-1)
 	syllable.syllable = katakana[rand_index][0]
 	syllable.en_syllable = katakana[rand_index][1]
 	syllable.position.x = -(FRAME_SIZE + DISTANCE)

@@ -2,7 +2,7 @@ extends Node
 
 
 @export var syllable_scene: PackedScene
-var katakana: Array = Utils.new().katakana
+var katakana: Array = Utils1.katakana
 const VER_OFFSET: int = 135
 const HOR_OFFSET: int = 85
 const FRAME_SIZE: int = 94

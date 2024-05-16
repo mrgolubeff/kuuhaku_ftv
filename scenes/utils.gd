@@ -2,6 +2,9 @@ extends Node
 class_name Utils
 
 
+var start_index: int = 0
+var end_index: int = 4
+
 var katakana = [
 	["ア", "a"], # 0
 	["イ", "i"],
