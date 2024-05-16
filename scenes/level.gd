@@ -93,3 +93,11 @@ func _on_syllable_pressed(syllable: Area2D):
 	var syllable_index = upper_syllables.find(syllable)
 	upper_syllables.remove_at(syllable_index)
 	lower_syllables.append(syllable)
+
+
+func _on_upper_end_area_entered(area):
+	print("Syllable area entered.")
+
+
+func _on_lower_end_area_entered(area):
+	print("Lower syllable area entered.")
