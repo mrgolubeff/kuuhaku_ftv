@@ -6,9 +6,10 @@ var upper_syllables: Array = []
 var lower_syllables: Array = []
 const UPPER_SPEED: int = 25
 const LOWER_SPEED: int = -75
+const OFFSET: int = 430
 const FRAME_SIZE: int = 94
 var score: int = 0
-var game_running = false
+var game_running: bool = false
 
 var katakana = [
 	["ア", "a"], # 0
@@ -83,7 +84,8 @@ func _on_timer_timeout():
 
 func create_syllable():
 	var syllable = syllable_scene.instantiate()
-	var rand_index = randi_range(0, katakana.size() - 1)
+	#var rand_index = randi_range(0, katakana.size() - 1)
+	var rand_index = randi_range(0, 4)
 	syllable.syllable = katakana[rand_index][0]
 	syllable.en_syllable = katakana[rand_index][1]
 	syllable.position.x = -100
@@ -96,7 +98,7 @@ func create_syllable():
 func _on_syllable_pressed(syllable: Area2D):
 	print("Syllable pressed.")
 	print(syllable.position.x)
-	syllable.position.y += 300
+	syllable.position.y += OFFSET
 	syllable.get_node("Button").disabled = true
 	var syllable_index = upper_syllables.find(syllable)
 	upper_syllables.remove_at(syllable_index)
@@ -115,6 +117,7 @@ func _on_lower_end_area_entered(area):
 	if area.en_syllable in scoring:
 		score += 1
 		print("Score: " + str(score))
+		$Score.text = str(score)
 	var syllable_index = lower_syllables.find(area)
 	lower_syllables.remove_at(syllable_index)
 	area.delete()
