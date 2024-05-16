@@ -1,3 +1,130 @@
-[gd_scene format=3 uid="uid://f45mkturwn5f"]
+[gd_scene load_steps=5 format=3 uid="uid://f45mkturwn5f"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_f4y27"]
+[ext_resource type="PackedScene" uid="uid://b1173boa5ni2v" path="res://scenes/syllable.tscn" id="2_kmgxf"]
+[ext_resource type="Texture2D" uid="uid://dntcsuw00uk10" path="res://assets/Gray.png" id="2_knvmk"]
+[ext_resource type="Texture2D" uid="uid://cv16pi1a6uvxh" path="res://assets/g3325.png" id="4_hw7dj"]
 
 [node name="MainMenu" type="Node"]
+script = ExtResource("1_f4y27")
+syllable_scene = ExtResource("2_kmgxf")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_knvmk")
+stretch_mode = 1
+
+[node name="AButton" type="Button" parent="."]
+offset_left = 85.0
+offset_top = 36.0
+offset_right = 179.0
+offset_bottom = 130.0
+text = "A-row"
+icon = ExtResource("4_hw7dj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="KaButton" type="Button" parent="."]
+offset_left = 184.0
+offset_top = 36.0
+offset_right = 278.0
+offset_bottom = 130.0
+text = "KA-row"
+icon = ExtResource("4_hw7dj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="SaButton" type="Button" parent="."]
+offset_left = 283.0
+offset_top = 36.0
+offset_right = 377.0
+offset_bottom = 130.0
+text = "SA-row"
+icon = ExtResource("4_hw7dj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="TaButton" type="Button" parent="."]
+offset_left = 382.0
+offset_top = 36.0
+offset_right = 476.0
+offset_bottom = 130.0
+text = "TA-row"
+icon = ExtResource("4_hw7dj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="NaButton" type="Button" parent="."]
+offset_left = 481.0
+offset_top = 36.0
+offset_right = 575.0
+offset_bottom = 130.0
+text = "NA-row"
+icon = ExtResource("4_hw7dj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HaButton" type="Button" parent="."]
+offset_left = 580.0
+offset_top = 36.0
+offset_right = 674.0
+offset_bottom = 130.0
+text = "HA-row"
+icon = ExtResource("4_hw7dj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="MaButton" type="Button" parent="."]
+offset_left = 679.0
+offset_top = 36.0
+offset_right = 773.0
+offset_bottom = 130.0
+text = "MA-row"
+icon = ExtResource("4_hw7dj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="YaButton" type="Button" parent="."]
+offset_left = 778.0
+offset_top = 36.0
+offset_right = 872.0
+offset_bottom = 130.0
+text = "YA-row"
+icon = ExtResource("4_hw7dj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="RaButton" type="Button" parent="."]
+offset_left = 877.0
+offset_top = 36.0
+offset_right = 971.0
+offset_bottom = 130.0
+text = "RA-row"
+icon = ExtResource("4_hw7dj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="WaButton" type="Button" parent="."]
+offset_left = 976.0
+offset_top = 36.0
+offset_right = 1070.0
+offset_bottom = 130.0
+text = "WA-row"
+icon = ExtResource("4_hw7dj")
+flat = true
+icon_alignment = 1
+expand_icon = true
