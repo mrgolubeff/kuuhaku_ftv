@@ -42,3 +42,15 @@ func create_table():
 			if i == 5:
 				y += 1
 				i = 0
+
+
+func _on_a_button_pressed():
+	Utils1.start_index = 0
+	Utils1.end_index = 4
+	get_tree().change_scene_to_file("res://scenes/level.tscn")
+
+
+func _on_ka_button_pressed():
+	Utils1.start_index = 5
+	Utils1.end_index = 9
+	get_tree().change_scene_to_file("res://scenes/level.tscn")
