@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://sswyxvsdx85k"]
+[gd_scene load_steps=8 format=3 uid="uid://sswyxvsdx85k"]
 
 [ext_resource type="Texture2D" uid="uid://dntcsuw00uk10" path="res://assets/Gray.png" id="1_tir71"]
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_u80dg"]
@@ -10,6 +10,9 @@ size = Vector2(24, 278.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7m5x8"]
 size = Vector2(24, 356.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fd733"]
+size = Vector2(2, 213.5)
 
 [node name="Level" type="Node"]
 script = ExtResource("1_u80dg")
@@ -41,6 +44,13 @@ position = Vector2(-144, 466)
 shape = SubResource("RectangleShape2D_7m5x8")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
+[node name="SpawningArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawningArea"]
+position = Vector2(-1, 106.75)
+shape = SubResource("RectangleShape2D_fd733")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
 [node name="Score" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -61,6 +71,5 @@ vertical_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="UpperEnd" to="." method="_on_upper_end_area_entered"]
-[connection signal="body_entered" from="UpperEnd" to="." method="_on_upper_end_body_entered"]
 [connection signal="area_entered" from="LowerEnd" to="." method="_on_lower_end_area_entered"]
-[connection signal="body_entered" from="LowerEnd" to="." method="_on_lower_end_body_entered"]
+[connection signal="area_exited" from="SpawningArea" to="." method="_on_spawning_area_area_exited"]

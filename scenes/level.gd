@@ -8,6 +8,7 @@ const UPPER_SPEED: int = 25
 const LOWER_SPEED: int = -125
 const OFFSET: int = 430
 const FRAME_SIZE: int = 94
+const DISTANCE: int = 5
 var score: int = 0
 var game_running: bool = false
 
@@ -67,7 +68,7 @@ var scoring = [
 func _ready():
 	game_running = true
 	create_syllable()
-	$Timer.start()
+	#$Timer.start()
 
 
 func _process(delta):
@@ -88,7 +89,7 @@ func create_syllable():
 	var rand_index = randi_range(0, 4)
 	syllable.syllable = katakana[rand_index][0]
 	syllable.en_syllable = katakana[rand_index][1]
-	syllable.position.x = -100
+	syllable.position.x = -(FRAME_SIZE + DISTANCE)
 	syllable.position.y = 50
 	syllable.get_node("Button").pressed.connect(_on_syllable_pressed.bind(syllable))
 	add_child(syllable)
@@ -121,3 +122,7 @@ func _on_lower_end_area_entered(area):
 	var syllable_index = lower_syllables.find(area)
 	lower_syllables.remove_at(syllable_index)
 	area.delete()
+
+
+func _on_spawning_area_area_exited(area):
+	create_syllable()
