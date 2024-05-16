@@ -6,6 +6,7 @@ var upper_syllables: Array = []
 var lower_syllables: Array = []
 const UPPER_SPEED: int = 25
 const LOWER_SPEED: int = 75
+var score: int = 0
 
 var katakana = [
 	["ア", "a"], # 0
@@ -55,6 +56,9 @@ var katakana = [
 	["ヲ", "wo"], # 44
 	["ン", "n"] # 45
 ]
+var scoring = [
+	"a", "i", "u", "e", "o",
+]
 
 
 func _ready():
@@ -97,7 +101,16 @@ func _on_syllable_pressed(syllable: Area2D):
 
 func _on_upper_end_area_entered(area):
 	print("Syllable area entered.")
+	var syllable_index = upper_syllables.find(area)
+	upper_syllables.remove_at(syllable_index)
+	area.delete()
 
 
 func _on_lower_end_area_entered(area):
 	print("Lower syllable area entered.")
+	if area.en_syllable in scoring:
+		score += 1
+		print("Score: " + str(score))
+	var syllable_index = lower_syllables.find(area)
+	lower_syllables.remove_at(syllable_index)
+	area.delete()
