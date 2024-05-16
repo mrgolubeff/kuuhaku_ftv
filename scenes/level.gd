@@ -5,7 +5,7 @@ extends Node
 var upper_syllables: Array = []
 var lower_syllables: Array = []
 const UPPER_SPEED: int = 25
-const LOWER_SPEED: int = -75
+const LOWER_SPEED: int = -125
 const OFFSET: int = 430
 const FRAME_SIZE: int = 94
 var score: int = 0
