@@ -11,10 +11,13 @@ const OFFSET: int = 430
 const FRAME_SIZE: int = 94
 const DISTANCE: int = 5
 var score: int = 0
+const WIN_SCORE: int = 21
 var game_running: bool = false
 
 var katakana: Array = Utils1.katakana
 var scoring: Array = []
+
+signal finish
 
 
 func _ready():
@@ -22,6 +25,7 @@ func _ready():
 	for syllable_pair in katakana.slice(Utils1.start_index, Utils1.end_index+1):
 		scoring.append(syllable_pair[1])
 	create_memo()
+	create_memo2()
 	
 	game_running = true
 	create_syllable()
@@ -67,6 +71,11 @@ func create_memo():
 	$Memo.text = text
 
 
+func create_memo2():
+	var text = "Reach " + str(WIN_SCORE) + " points"
+	$Memo2.text = text
+
+
 func _on_syllable_pressed(syllable: Area2D):
 	syllable.position.y += OFFSET
 	syllable.get_node("Button").disabled = true
@@ -82,7 +91,6 @@ func _on_upper_end_area_entered(area):
 
 
 func _on_lower_end_area_entered(area):
-	print("Lower syllable area entered.")
 	if area.en_syllable in scoring:
 		increase_score()
 	else:
@@ -93,15 +101,21 @@ func _on_lower_end_area_entered(area):
 
 
 func increase_score():
-		score += 1
-		$Score.text = str(score)
+	score += 1
+	$Score.text = str(score)
+	if score == WIN_SCORE:
+		call_deferred("finish_game")
 
 
 func decrease_score():
-		score -= 1
-		if score < 0:
-			score = 0
-		$Score.text = str(score)
+	score -= 1
+	if score < 0:
+		score = 0
+	$Score.text = str(score)
+
+
+func finish_game():
+	finish.emit()
 
 
 func _on_spawning_area_area_exited(_area):
@@ -109,4 +123,8 @@ func _on_spawning_area_area_exited(_area):
 
 
 func _on_exit_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
+func _on_finish():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
