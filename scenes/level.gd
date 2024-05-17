@@ -5,6 +5,7 @@ extends Node
 var upper_syllables: Array = []
 var lower_syllables: Array = []
 const UPPER_SPEED: int = 75
+const UPPER_HIGH_SPEED: int = 500
 const LOWER_SPEED: int = -300
 const OFFSET: int = 430
 const FRAME_SIZE: int = 94
@@ -30,7 +31,16 @@ func _ready():
 func _process(delta):
 	if game_running:
 		for syllable in upper_syllables:
-			syllable.position.x += UPPER_SPEED * delta
+			var syllable_index = upper_syllables.find(syllable)
+			if (syllable_index != 0) and (syllable.position.x + FRAME_SIZE + DISTANCE <
+					upper_syllables[syllable_index-1].position.x):
+				syllable.position.x += UPPER_HIGH_SPEED * delta
+				if (syllable_index != 0) and (syllable.position.x + FRAME_SIZE + DISTANCE >
+						upper_syllables[syllable_index-1].position.x):
+					syllable.position.x = (upper_syllables[syllable_index-1].position.x -
+							DISTANCE - FRAME_SIZE)
+			else:
+				syllable.position.x += UPPER_SPEED * delta
 		for syllable in lower_syllables:
 			syllable.position.x += LOWER_SPEED * delta
 
