@@ -10,14 +10,21 @@ config_version=5
 
 [application]
 
-config/name="Kuuhaku"
+config/name="Unavoidable Katakana"
+config/description="Learn katakana easily with this interactive game. Start now and make katakana a breeze!"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.0784314, 0.133333, 0.25098, 1)
+boot_splash/image="res://assets/Wildling_head_only.png"
+config/icon="res://assets/ka-icon.png"
 
 [autoload]
 
 Utils1="*res://scenes/utils.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [rendering]
 
