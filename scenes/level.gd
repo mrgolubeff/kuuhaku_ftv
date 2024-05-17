@@ -81,12 +81,24 @@ func _on_upper_end_area_entered(area):
 func _on_lower_end_area_entered(area):
 	print("Lower syllable area entered.")
 	if area.en_syllable in scoring:
-		score += 1
-		print("Score: " + str(score))
-		$Score.text = str(score)
+		increase_score()
+	else:
+		decrease_score()
 	var syllable_index = lower_syllables.find(area)
 	lower_syllables.remove_at(syllable_index)
 	area.delete()
+
+
+func increase_score():
+		score += 1
+		$Score.text = str(score)
+
+
+func decrease_score():
+		score -= 1
+		if score < 0:
+			score = 0
+		$Score.text = str(score)
 
 
 func _on_spawning_area_area_exited(_area):
