@@ -22,6 +22,7 @@ func _ready():
 	for syllable_pair in katakana.slice(Utils1.start_index, Utils1.end_index+1):
 		scoring.append(syllable_pair[1])
 	print(scoring)
+	create_memo()
 	
 	game_running = true
 	create_syllable()
@@ -59,6 +60,13 @@ func create_syllable():
 	syllable.get_node("Button").pressed.connect(_on_syllable_pressed.bind(syllable))
 	call_deferred("add_child", syllable)
 	upper_syllables.append(syllable)
+
+
+func create_memo():
+	var text = ""
+	for syllable in scoring:
+		text += syllable.to_upper() + " "
+	$Memo.text = text
 
 
 func _on_syllable_pressed(syllable: Area2D):
