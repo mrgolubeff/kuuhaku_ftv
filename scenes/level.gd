@@ -21,12 +21,10 @@ func _ready():
 	scoring = []
 	for syllable_pair in katakana.slice(Utils1.start_index, Utils1.end_index+1):
 		scoring.append(syllable_pair[1])
-	print(scoring)
 	create_memo()
 	
 	game_running = true
 	create_syllable()
-	#$Timer.start()
 
 
 func _process(delta):
@@ -70,8 +68,6 @@ func create_memo():
 
 
 func _on_syllable_pressed(syllable: Area2D):
-	print("Syllable pressed.")
-	print(syllable.position.x)
 	syllable.position.y += OFFSET
 	syllable.get_node("Button").disabled = true
 	var syllable_index = upper_syllables.find(syllable)
@@ -80,7 +76,6 @@ func _on_syllable_pressed(syllable: Area2D):
 
 
 func _on_upper_end_area_entered(area):
-	print("Syllable area entered.")
 	var syllable_index = upper_syllables.find(area)
 	upper_syllables.remove_at(syllable_index)
 	area.delete()
