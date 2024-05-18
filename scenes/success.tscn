@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqi3wpojv2nvi"]
+
+[ext_resource type="Script" path="res://scenes/success.gd" id="1_0ls2x"]
+[ext_resource type="Texture2D" uid="uid://pta25acbbkj8" path="res://assets/Blue.png" id="2_grkpw"]
+[ext_resource type="Texture2D" uid="uid://bmm2wbhr1jm" path="res://assets/g3344.png" id="3_qfdqp"]
+
+[node name="Success" type="Node"]
+script = ExtResource("1_0ls2x")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_grkpw")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 119.0
+offset_top = 55.0
+offset_right = 1019.0
+offset_bottom = 376.0
+theme_override_font_sizes/font_size = 76
+text = "You've earned
+enough points!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 233.0
+offset_top = 389.0
+offset_right = 895.0
+offset_bottom = 531.0
+theme_override_font_sizes/font_size = 76
+text = "Continue"
+icon = ExtResource("3_qfdqp")
+flat = true
+clip_text = true
+icon_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

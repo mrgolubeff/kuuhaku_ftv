@@ -131,4 +131,4 @@ func _on_exit_button_pressed():
 
 
 func _on_finish():
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/success.tscn")
