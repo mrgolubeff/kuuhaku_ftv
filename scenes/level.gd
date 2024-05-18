@@ -11,6 +11,7 @@ const OFFSET: int = 430
 const FRAME_SIZE: int = 94
 const DISTANCE: int = 5
 const MIDPOINT: int = 500
+const CHANCE: float = 0.6
 var score: int = 0
 const WIN_SCORE: int = 21
 var game_running: bool = false
@@ -54,7 +55,7 @@ func _process(delta):
 func create_syllable():
 	var syllable = syllable_scene.instantiate()
 	var rand_index: int
-	if randf() > 0.5:
+	if randf() > CHANCE:
 		rand_index = randi_range(Utils1.start_index, Utils1.end_index)
 	else:
 		rand_index = randi_range(0, katakana.size()-1)
