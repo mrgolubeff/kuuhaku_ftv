@@ -4,9 +4,9 @@ extends Node
 @export var syllable_scene: PackedScene
 var upper_syllables: Array = []
 var lower_syllables: Array = []
-const UPPER_SPEED: int = 40
+const UPPER_SPEED: int = 55
 const UPPER_HIGH_SPEED: int = 500
-const LOWER_SPEED: int = -300
+const LOWER_SPEED: int = -125
 const OFFSET: int = 430
 const FRAME_SIZE: int = 94
 const DISTANCE: int = 5
@@ -79,6 +79,7 @@ func create_memo2():
 func _on_syllable_pressed(syllable: Area2D):
 	syllable.position.y += OFFSET
 	syllable.get_node("Button").disabled = true
+	syllable.get_node("En").visible = true
 	var syllable_index = upper_syllables.find(syllable)
 	upper_syllables.remove_at(syllable_index)
 	lower_syllables.append(syllable)
