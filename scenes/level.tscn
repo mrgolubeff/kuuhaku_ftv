@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_u80dg"]
 [ext_resource type="PackedScene" uid="uid://b1173boa5ni2v" path="res://scenes/syllable.tscn" id="2_l8dc3"]
-[ext_resource type="Texture2D" uid="uid://bhnmw5as5h3ib" path="res://assets/Pink.png" id="3_mtmnu"]
+[ext_resource type="Texture2D" uid="uid://depqsar4wuidr" path="res://assets/Green.png" id="3_i5oky"]
 [ext_resource type="FontFile" uid="uid://dl88tmnl3kgqd" path="res://assets/nasalization-rg.ttf" id="4_c80r3"]
 [ext_resource type="Texture2D" uid="uid://crpqovmvwcsf3" path="res://assets/ExitButton.png" id="5_ro3e0"]
 
@@ -26,7 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_mtmnu")
+texture = ExtResource("3_i5oky")
 stretch_mode = 1
 
 [node name="UpperEnd" type="Area2D" parent="."]
