@@ -83,6 +83,8 @@ func _on_syllable_pressed(syllable: Area2D):
 	syllable.position.y += OFFSET
 	syllable.get_node("Button").disabled = true
 	syllable.get_node("En").visible = true
+	if syllable.en_syllable in scoring:
+		syllable.get_node("FrameGreen").visible = true
 	var syllable_index = upper_syllables.find(syllable)
 	upper_syllables.remove_at(syllable_index)
 	lower_syllables.append(syllable)

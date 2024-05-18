@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b1173boa5ni2v" path="res://scenes/syllable.tscn" id="2_l8dc3"]
 [ext_resource type="Texture2D" uid="uid://depqsar4wuidr" path="res://assets/Green.png" id="3_i5oky"]
 [ext_resource type="FontFile" uid="uid://dl88tmnl3kgqd" path="res://assets/nasalization-rg.ttf" id="4_c80r3"]
-[ext_resource type="Texture2D" uid="uid://crpqovmvwcsf3" path="res://assets/ExitButton.png" id="5_ro3e0"]
+[ext_resource type="Texture2D" uid="uid://hpqj67ux1mp4" path="res://assets/ExitButton1.png" id="5_xhiaj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbci6"]
 size = Vector2(24, 278.5)
@@ -100,7 +100,7 @@ offset_left = 1035.0
 offset_top = 292.0
 offset_right = 1095.0
 offset_bottom = 352.0
-icon = ExtResource("5_ro3e0")
+icon = ExtResource("5_xhiaj")
 flat = true
 expand_icon = true
 
