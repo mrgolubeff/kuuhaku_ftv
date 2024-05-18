@@ -10,6 +10,7 @@ const LOWER_SPEED: int = -125
 const OFFSET: int = 430
 const FRAME_SIZE: int = 94
 const DISTANCE: int = 5
+const MIDPOINT: int = 500
 var score: int = 0
 const WIN_SCORE: int = 21
 var game_running: bool = false
@@ -42,6 +43,8 @@ func _process(delta):
 						upper_syllables[syllable_index-1].position.x):
 					syllable.position.x = (upper_syllables[syllable_index-1].position.x -
 							DISTANCE - FRAME_SIZE)
+			elif (syllable_index == 0) and (syllable.position.x < MIDPOINT):
+				syllable.position.x += UPPER_HIGH_SPEED * delta
 			else:
 				syllable.position.x += UPPER_SPEED * delta
 		for syllable in lower_syllables:
