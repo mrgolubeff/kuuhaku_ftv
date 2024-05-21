@@ -2,7 +2,7 @@
 
 ### Unavoidable Katakana
 An educational game to learn Japanese phonetic alphabet "Katakana" made in [Godot](https://github.com/godotengine/godot) engine.
-The game was created as a submission for [Godot Wild Jam](https://godotwildjam.com/) #69.
+The game was created as a submission to [Godot Wild Jam](https://godotwildjam.com/) #69.
 
 **[Play the game on itch.io!](https://mrgolubeff.itch.io/unavoidable-katakana)**
 
